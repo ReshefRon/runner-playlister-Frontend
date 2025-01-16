@@ -4,7 +4,7 @@ import '../styles/LoginPage.css';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
-  const loginurl = process.env("URL") || "http://localhost:1998/" ;
+  const loginurl = process.env.REACT_APP_BACKEND_URL || "http://localhost:1998/" ;
 
   return (
     <>

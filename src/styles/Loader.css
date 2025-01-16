@@ -1,0 +1,16 @@
+/* Loader.css */
+
+/* Loader Spinner */
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px; /* Adjust size as needed */
+  height: 50px; /* Adjust size as needed */
+}
+
+.loader-gif {
+  width: 100%; /* Adjust to fit the container or set specific size */
+  height: 100%; /* Adjust to fit the container or set specific size */
+}
+  

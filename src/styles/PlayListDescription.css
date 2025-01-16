@@ -1,0 +1,160 @@
+/* General styles for the page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .PlayListDescription__header {
+    background-color: #1db954; /* Spotify green */
+    font-family: 'Playfair Display', sans-serif; /* Spotify-like font */
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribute space between logo and text */
+    width: 100%; /* Ensure header spans full width of the screen */
+    padding: 10px 20px;
+  }
+  
+  .PlayListDescription__header img {
+    width: 90px;
+    height: auto;
+    margin-right: 10px;
+  }
+  
+  .PlayListDescription__header h1 {
+    margin: 0;
+    text-align: center;
+    flex-grow: 1; /* Makes the h1 grow to fill available space */
+    text-align: center; /* Ensure the text stays centered */
+  }
+  
+  #playlist_desc_title {
+    font-size: 42px;
+    font-weight: bold;
+    margin: 30px 0;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 2px;
+    margin-left: 130px;  
+  }
+
+  .PlayListDescription__main-container {
+    height:100vh;
+  }
+  .PlayListDescription__playlist-table-container {
+    width: 100%; /* Make the container take up the full width */
+    display: flex;
+    justify-content: center; /* Center the table horizontally */
+    padding: 20px;
+    margin:20px auto;
+  }
+  
+  .PlayListDescription__playlist-table-container__playlist-table {
+    width: 80%; /* Set a max width for the table */
+    table-layout: fixed; /* Ensure even column widths */
+    margin: 0 auto; /* Center the table horizontally */
+    border-collapse: collapse; /* Collapses table borders into one */
+  }
+  
+  .PlayListDescription__playlist-table-container__playlist-table th,
+  .PlayListDescription__playlist-table-container__playlist-table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  
+  .PlayListDescription__playlist-table-container__playlist-table th {
+    background-color: #2e2e2e;
+  }
+
+  .PlayListDescription__playlist-table-container__playlist-table th:nth-child(1),
+  .PlayListDescription__playlist-table-container__playlist-table td:nth-child(1) {
+    width: 100px; 
+    word-wrap: normal; 
+  }
+
+  .PlayListDescription__playlist-table-container__playlist-table th:nth-child(2),
+  .PlayListDescription__playlist-table-container__playlist-table td:nth-child(2) {
+    width: 100px; 
+    word-wrap: normal; 
+  }
+
+  .PlayListDescription__playlist-table-container__playlist-table th:nth-child(3),
+  .PlayListDescription__playlist-table-container__playlist-table td:nth-child(3) {
+    width: 50px; 
+    word-wrap: normal; 
+  }
+
+  .PlayListDescription__playlist-table-container__playlist-table th:nth-child(4),
+  .PlayListDescription__playlist-table-container__playlist-table td:nth-child(4) {
+    width: 50px; 
+    word-wrap: normal; 
+  }
+  
+  .playlist-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+  }
+  
+  .action-button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .delete-button:hover {
+    color: red;
+  }
+  
+  .PlayListDescription__nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .PlayListDescription__back-to-main-btn {
+    position: fixed;
+    bottom: 60px;  /* Position the button at the bottom */
+    left: 20px;
+    background-color: black;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+  }
+  .PlayListDescription__back-to-playlists-btn {
+    position: fixed;
+    bottom: 60px;  /* Position the button at the bottom */
+    right: 20px;
+    background-color: black;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+  }
+  
+  
+/* Footer styles */
+#PlayListDescription__footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #121212;
+  padding: 10px 0;
+}
+
+.PlayListDescription__footer-text {
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  margin: 0;
+}
+
+  

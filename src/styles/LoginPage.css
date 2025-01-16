@@ -1,0 +1,134 @@
+/* LoginPage.css */
+.LoginPage__page-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .LoginPage__page-container__header {
+    background-color: #1db954;
+    font-family: 'Playfair Display', sans-serif;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 20px;
+  }
+  
+  .LoginPage__page-container__header img {
+    width: 100px;
+    height: auto;
+  }
+  
+  .LoginPage__page-container__header h1 {
+    margin: 0;
+    text-align: center;
+    flex-grow: 1;
+  }
+  
+  .LoginPage__main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-grow: 1;
+    padding: 40px 0;
+  }
+  
+  .LoginPage__content {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .LoginPage__welcome-text {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: white;
+    text-align: center;
+  }
+  
+  .LoginPage__subtitle {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-align: center;
+  }
+  
+  .LoginPage__feature-card {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease;
+  }
+  
+  .LoginPage__feature-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .LoginPage__feature-icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+    display: block;
+    text-align: center;
+  }
+  
+  .LoginPage__feature-title {
+    font-size: 28px;
+    margin: 5px 0;
+    color: white;
+    text-align: center;
+  }
+  
+  .LoginPage__feature-description {
+    color: #999;
+    font-size: 18px;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .LoginPage__login-button {
+    width: 100%;
+    padding: 20px;
+    font-size: 24px;
+    margin-top: 20px;
+    background-color: black;
+    color: white;
+    border: 1px solid #1db954;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .LoginPage__login-button:hover {
+    background-color: #1db954;
+    color: black;
+    transform: scale(1.05);
+  }
+  
+  .LoginPage__login-button:focus {
+    outline: none;
+  }
+  
+  #LoginPage__footer {
+    position: relative;
+    bottom: 0;
+    margin-bottom: 0;
+    z-index: 10000000;
+  }
+  
+  .LoginPage__footer-text {
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+    padding: 10px;
+    width: 100%;
+    margin-top: auto;
+  }

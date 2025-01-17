@@ -18,9 +18,11 @@ const PlayListDescription = () => {
   const [tracks, setTracks] = useState([])
   const navigate = useNavigate();
 
+  const apiUrl = process.env.REACT_APP_BACKEND_URL;
+
   const fetchTracks = async () => {
     try {
-      const response = await fetch(`http://localhost:1998/get_playlists_tracks?playlist_id=${playlistId}`);
+      const response = await fetch(`${apiUrl}/get_playlists_tracks?playlist_id=${playlistId}`);
       if (response.ok) {
         const data = await response.json();
         setTracks(data.tracks);
@@ -36,7 +38,7 @@ const PlayListDescription = () => {
 
   const handleDeleteTrack = async (trackId,playlistId) => {
     try {
-      const response = await fetch(`http://localhost:1998/remove_track?track_id=${trackId}&playlist_id=${playlistId}`, {
+      const response = await fetch(`${apiUrl}/remove_track?track_id=${trackId}&playlist_id=${playlistId}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json'

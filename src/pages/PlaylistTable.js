@@ -28,9 +28,11 @@ const PlaylistTable = () => {
   const [playlists, setPlaylists] = useState([]);
   const navigate = useNavigate();
 
+  const apiUrl = process.env.REACT_APP_BACKEND_URL
+
   const fetchPlaylists = async () => {
     try {
-      const playlistsResponse = await fetch(`http://localhost:1998/get_playlists_data`);
+      const playlistsResponse = await fetch(`${apiUrl}/get_playlists_data`);
         if (playlistsResponse.ok) {
           const data = await playlistsResponse.json();
           setPlaylists(data.playlists);
@@ -46,7 +48,7 @@ const PlaylistTable = () => {
 
     const handleDelete = async (id) => {
       try {
-        const response = await fetch(`http://localhost:1998/remove_playlist?id=${id}`, {
+        const response = await fetch(`${apiUrl}/remove_playlist?id=${id}`, {
           method: 'DELETE'
         });
         if (response.ok) {

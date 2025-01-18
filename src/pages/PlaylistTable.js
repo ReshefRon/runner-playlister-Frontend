@@ -28,7 +28,7 @@ const PlaylistTable = () => {
   const [playlists, setPlaylists] = useState([]);
   const navigate = useNavigate();
 
-  const apiUrl = process.env.REACT_APP_BACKEND_URL
+  const apiUrl = process.env.REACT_APP_BACKEND_URL;
 
   const fetchPlaylists = async () => {
     try {
@@ -59,8 +59,13 @@ const PlaylistTable = () => {
       }
     };
 
-    const handleShow = (id,name) => {
-      navigate(`/playlist_tracks?playlist_id=${id}&name=${name}`);
+    const handleShow = (id, name) => {
+      navigate('/playlist_tracks', { 
+        state: { 
+          playlist_id: id,
+          name: name 
+        }
+      });
     };
 
 

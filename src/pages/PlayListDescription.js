@@ -12,17 +12,24 @@ const formatDuration = (seconds) => {
 
 const PlayListDescription = () => {
   const location = useLocation();
-  const queryParams = new URLSearchParams(location.search);
-  const playlistId = queryParams.get('playlist_id');
-  const playlistName = queryParams.get('name');
-  const [tracks, setTracks] = useState([])
+  //const playlistId = location.state?.playlistId;
+  //const playlistName = location.state?.name;
+  const { playlist_id: playlistId, name: playlistName } = location.state || {};
+  const [tracks, setTracks] = useState([]);
   const navigate = useNavigate();
 
   const apiUrl = process.env.REACT_APP_BACKEND_URL;
 
   const fetchTracks = async () => {
     try {
-      const response = await fetch(`${apiUrl}/get_playlists_tracks?playlist_id=${playlistId}`);
+      const response = await fetch(`${apiUrl}/get_playlists_tracks`,{
+        method:'POST',
+        headers:{
+          'Content-Type': 'application/json'
+        }, body: JSON.stringify({
+          playlist_id : playlistId
+        })
+        });
       if (response.ok) {
         const data = await response.json();
         setTracks(data.tracks);
@@ -34,7 +41,7 @@ const PlayListDescription = () => {
 
   useEffect(() => {
     fetchTracks();
-  }, []);
+  }, [playlistId]);
 
   const handleDeleteTrack = async (trackId,playlistId) => {
     try {

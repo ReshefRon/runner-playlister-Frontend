@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaEye, FaArrowAltCircleLeft } from 'react-icons/fa';
+import { FaEye, FaArrowAltCircleLeft, FaSpotify } from 'react-icons/fa';
 import '../styles/PlaylistTable.css';
 import spotifyLogo from '../images/spotify_logo.png';
 
@@ -68,6 +68,30 @@ const PlaylistTable = () => {
       });
     };
 
+    const handleCreateSpotifyPlaylist = async (id, name) => {
+      try {
+        const response = await fetch(`${apiUrl}/create_spotify_playlist`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            playlist_id: id,
+            name: name
+          })
+        });
+        
+        if (response.ok) {
+          const data = await response.json();
+          alert('Playlist successfully created in your Spotify account!');
+        } else {
+          alert('Failed to create Spotify playlist. Please try again.');
+        }
+      } catch (error) {
+        console.error('Error creating Spotify playlist:', error);
+        alert('Error creating Spotify playlist');
+      }
+    };
 
   return (
     <>
@@ -120,6 +144,13 @@ const PlaylistTable = () => {
                   >
                     <FaEye style={{ color: 'white' }} />
                   </button>
+                  <button
+                  className="PlaylistTable__action-button spotify-button"
+                  onClick={() => handleCreateSpotifyPlaylist(playlist[0], playlist[1])}
+                  title="Create in Spotify"
+                  >
+                  <FaSpotify style={{ color: '#1DB954' }} />
+                </button>
                 </td>
               </tr>
             ))}

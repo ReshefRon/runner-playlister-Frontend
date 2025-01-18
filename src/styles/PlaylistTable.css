@@ -85,7 +85,7 @@
 }
 .PlaylistTable__playlist-table-container__playlist-table th:nth-child(5), /* Target the Actions column */
 .PlaylistTable__playlist-table-container__playlist-table td:nth-child(5) {
-  width: 90px; 
+  width: 120px; 
   word-wrap: normal; 
 }
 
@@ -102,6 +102,15 @@
 
 .show-button:hover {
   color: blue;
+}
+
+.PlaylistTable__action-button.spotify-button:hover {
+  transform: scale(1.1);
+}
+
+.PlaylistTable__action-button.spotify-button {
+  transition: transform 0.2s ease;
+
 }
 
 /* Arrow button for back navigation at the bottom */

@@ -8,11 +8,13 @@ const ButtonContainer = ({userDetails}) => {
   const [isLoading, setIsLoading] = useState(false);
   const [result, setResult] = useState(null);
 
+  const apiUrl = process.env.REACT_APP_BACKEND_URL;
+
   const handleGenerate = async() => {
     setIsLoading(true);
     setResult(null);
     try {
-      const response = await fetch('http://127.0.0.1:1998/generate-playlist', {
+      const response = await fetch(`${apiUrl}/generate-playlist`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(userDetails)
